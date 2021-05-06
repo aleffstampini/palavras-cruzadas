@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <title>Cruzadinha</title>
+</head>
+<body>
+    <div class="options" id="options_">
+        <div class="reset-" id="reset_" onclick="resetar_jogo()">
+            <img src="assets/img/refresh.png">
+        </div>
+        <!-- <div class="btn-perfil" id="btn_perfil" onclick="">
+            <img src="assets/img/perfil.png">
+        </div> -->
+    </div>
+
+    <div class="container-box">
+        <div class="container-iniciar" id="container_iniciar">
+            <h1>Instruções do Jogo</h1>
+            <p>Clique em <b>"Iniciar Jogo!"</b> para criar um perfil e iniciar uma partida.</p>
+            <p>Perguntas serão exibidas na parte <b>Direita</b> do quadro.</p>
+            <p>Insira a sua resposta na caixa de texto e clique em <b>"Verificar"</b> para conferir a sua resposta.</p>
+            <p>A partida acaba quando as <b>16 questões</b> forem respondidas.</p>
+
+            <button onclick="iniciar_jogo()">Iniciar Jogo!</button>
+        </div>
+
+        <div class="container-criar-perfil" id="container_criar_perfil">
+            <h1>Seu Perfil</h1>
+            
+            <p>Apelido:</p>
+            <input id="input_apelido" type="text">
+
+            <p>Cor favorita:</p>
+            <input id="input_color" type="color">
+
+            <button onclick="criar_perfil()">Divirta-se!</button>
+        </div>
+
+        <div class="container-central" id="container_central">
+            <div class="container-table" id="container_table">
+                <table class="base-table">
+                    <tbody>
+                        <!-- Row 01 -->
+                        <tr>
+                            <td id="td_1">&nbsp;</td>
+                            <td id="td_2">&nbsp;</td>
+                            <td id="td_3">&nbsp;</td>
+                            <td class="td-ativo" id="td_4">1</td>
+                            <td class="td-ativo" id="td_5">16</td>
+                            <td id="td_6">&nbsp;</td>
+                            <td id="td_7">&nbsp;</td>
+                            <td id="td_8">&nbsp;</td>
+                            <td id="td_9">&nbsp;</td>
+                            <td id="td_10">&nbsp;</td>
+                            <td id="td_11">&nbsp;</td>
+                            <td id="td_12">&nbsp;</td>
+                            <td id="td_13">&nbsp;</td>
+                        </tr>
+                        <!-- Row 02 -->
+                        <tr>
+                            <td id="td_14">&nbsp;</td>
+                            <td id="td_15">&nbsp;</td>
+                            <td id="td_16">&nbsp;</td>
+                            <td class="td-ativo" id="td_17">&nbsp;</td>
+                            <td class="td-ativo" id="td_18">&nbsp;</td>
+                            <td id="td_19">&nbsp;</td>
+                            <td id="td_20">&nbsp;</td>
+                            <td id="td_21">&nbsp;</td>
+                            <td id="td_22">&nbsp;</td>
+                            <td id="td_23">&nbsp;</td>
+                            <td class="td-ativo" id="td_24">8</td>
+                            <td id="td_25">&nbsp;</td>
+                            <td id="td_26">&nbsp;</td>
+                        </tr>
+                        <!-- Row 03 -->
+                        <tr>
+                            <td id="td_27">&nbsp;</td>
+                            <td id="td_28">&nbsp;</td>
+                            <td class="td-ativo" id="td_29">15</td>
+                            <td class="td-ativo" id="td_30">&nbsp;</td>
+                            <td class="td-ativo" id="td_31">&nbsp;</td>
+                            <td class="td-ativo" id="td_32">&nbsp;</td>
+                            <td class="td-ativo" id="td_33">&nbsp;</td>
+                            <td class="td-ativo" id="td_34">&nbsp;</td>
+                            <td class="td-ativo" id="td_35">&nbsp;</td>
+                            <td class="td-ativo" id="td_36">&nbsp;</td>
+                            <td class="td-ativo" id="td_37">&nbsp;</td>
+                            <td id="td_38">&nbsp;</td>
+                            <td id="td_39">&nbsp;</td>
+                        </tr>
+                        <!-- Row 04 -->
+                        <tr>
+                            <td id="td_40">&nbsp;</td>
+                            <td id="td_41">&nbsp;</td>
+                            <td id="td_42">&nbsp;</td>
+                            <td id="td_43">&nbsp;</td>
+                            <td class="td-ativo" id="td_44">&nbsp;</td>
+                            <td id="td_45">&nbsp;</td>
+                            <td class="td-ativo" id="td_46">3_4</td>
+                            <td class="td-ativo" id="td_47">&nbsp;</td>
+                            <td class="td-ativo" id="td_48">&nbsp;</td>
+                            <td id="td_49">&nbsp;</td>
+                            <td class="td-ativo" id="td_50">&nbsp;</td>
+                            <td id="td_51">&nbsp;</td>
+                            <td id="td_52">&nbsp;</td>
+                        </tr>
+                        <!-- Row 05 -->
+                        <tr>
+                            <td id="td_53">&nbsp;</td>
+                            <td id="td_54">&nbsp;</td>
+                            <td id="td_55">&nbsp;</td>
+                            <td id="td_56">&nbsp;</td>
+                            <td class="td-ativo" id="td_57">&nbsp;</td>
+                            <td id="td_58">&nbsp;</td>
+                            <td class="td-ativo" id="td_59">&nbsp;</td>
+                            <td id="td_60">&nbsp;</td>
+                            <td id="td_61">&nbsp;</td>
+                            <td id="td_62">&nbsp;</td>
+                            <td class="td-ativo" id="td_63">&nbsp;</td>
+                            <td id="td_64">&nbsp;</td>
+                            <td id="td_65">&nbsp;</td>
+                        </tr>
+                        <!-- Row 06 -->
+                        <tr>
+                            <td id="td_66">&nbsp;</td>
+                            <td id="td_67">&nbsp;</td>
+                            <td id="td_68">&nbsp;</td>
+                            <td id="td_69">&nbsp;</td>
+                            <td class="td-ativo" id="td_70">&nbsp;</td>
+                            <td id="td_71">&nbsp;</td>
+                            <td class="td-ativo" id="td_72">&nbsp;</td>
+                            <td id="td_73">&nbsp;</td>
+                            <td id="td_74">&nbsp;</td>
+                            <td id="td_75">&nbsp;</td>
+                            <td class="td-ativo" id="td_76">&nbsp;</td>
+                            <td id="td_77">&nbsp;</td>
+                            <td id="td_78">&nbsp;</td>
+                        </tr>
+                        <!-- Row 07 -->
+                        <tr>
+                            <td id="td_79">&nbsp;</td>
+                            <td id="td_80">&nbsp;</td>
+                            <td id="td_81">&nbsp;</td>
+                            <td id="td_82">&nbsp;</td>
+                            <td class="td-ativo" id="td_83">&nbsp;</td>
+                            <td id="td_84">&nbsp;</td>
+                            <td class="td-ativo" id="td_85">14</td>
+                            <td class="td-ativo" id="td_86">&nbsp;</td>
+                            <td id="td_87">&nbsp;</td>
+                            <td class="td-ativo" id="td_88">7</td>
+                            <td class="td-ativo" id="td_89">13</td>
+                            <td class="td-ativo" id="td_90">&nbsp;</td>
+                            <td id="td_91">&nbsp;</td>
+                        </tr>
+                        <!-- Row 08 -->
+                        <tr>
+                            <td id="td_92">&nbsp;</td>
+                            <td id="td_93">&nbsp;</td>
+                            <td id="td_94">&nbsp;</td>
+                            <td id="td_95">&nbsp;</td>
+                            <td class="td-ativo" id="td_96">&nbsp;</td>
+                            <td id="td_97">&nbsp;</td>
+                            <td class="td-ativo" id="td_98">&nbsp;</td>
+                            <td id="td_99">&nbsp;</td>
+                            <td class="td-ativo" id="td_100">2</td>
+                            <td class="td-ativo" id="td_101">&nbsp;</td>
+                            <td class="td-ativo" id="td_102">&nbsp;</td>
+                            <td id="td_103">&nbsp;</td>
+                            <td id="td_104">&nbsp;</td>
+                        </tr>
+                        <!-- Row 09 -->
+                        <tr>
+                            <td id="td_105">&nbsp;</td>
+                            <td id="td_106">&nbsp;</td>
+                            <td id="td_107">&nbsp;</td>
+                            <td id="td_108">&nbsp;</td>
+                            <td class="td-ativo" id="td_109">&nbsp;</td>
+                            <td id="td_110">&nbsp;</td>
+                            <td class="td-ativo" id="td_111">&nbsp;</td>
+                            <td id="td_112">&nbsp;</td>
+                            <td id="td_113">&nbsp;</td>
+                            <td class="td-ativo" id="td_114">&nbsp;</td>
+                            <td class="td-ativo" id="td_115">&nbsp;</td>
+                            <td id="td_116">&nbsp;</td>
+                            <td id="td_117">&nbsp;</td>
+                        </tr>
+                        <!-- Row 10 -->
+                        <tr>
+                            <td id="td_118">&nbsp;</td>
+                            <td id="td_119">&nbsp;</td>
+                            <td id="td_120">&nbsp;</td>
+                            <td id="td_121">&nbsp;</td>
+                            <td id="td_122">&nbsp;</td>
+                            <td id="td_123">&nbsp;</td>
+                            <td class="td-ativo" id="td_124">&nbsp;</td>
+                            <td id="td_125">&nbsp;</td>
+                            <td id="td_126">&nbsp;</td>
+                            <td class="td-ativo" id="td_127">&nbsp;</td>
+                            <td class="td-ativo" id="td_128">&nbsp;</td>
+                            <td id="td_129">&nbsp;</td>
+                            <td id="td_130">&nbsp;</td>
+                        </tr>
+                        <!-- Row 11 -->
+                        <tr>
+                            <td id="td_131">&nbsp;</td>
+                            <td id="td_132">&nbsp;</td>
+                            <td id="td_133">&nbsp;</td>
+                            <td id="td_134">&nbsp;</td>
+                            <td id="td_135">&nbsp;</td>
+                            <td id="td_136">&nbsp;</td>
+                            <td class="td-ativo" id="td_137">&nbsp;</td>
+                            <td id="td_138">&nbsp;</td>
+                            <td class="td-ativo" id="td_139">12</td>
+                            <td class="td-ativo" id="td_140">&nbsp;</td>
+                            <td class="td-ativo" id="td_141">&nbsp;</td>
+                            <td id="td_142">&nbsp;</td>
+                            <td id="td_143">&nbsp;</td>
+                        </tr>
+                        <!-- Row 12 -->
+                        <tr>
+                            <td id="td_144">&nbsp;</td>
+                            <td id="td_145">&nbsp;</td>
+                            <td id="td_146">&nbsp;</td>
+                            <td id="td_147">&nbsp;</td>
+                            <td id="td_148">&nbsp;</td>
+                            <td id="td_149">&nbsp;</td>
+                            <td class="td-ativo" id="td_150">9</td>
+                            <td class="td-ativo" id="td_151">&nbsp;</td>
+                            <td class="td-ativo" id="td_152">&nbsp;</td>
+                            <td id="td_153">&nbsp;</td>
+                            <td class="td-ativo" id="td_154">&nbsp;</td>
+                            <td id="td_155">&nbsp;</td>
+                            <td id="td_156">&nbsp;</td>
+                        </tr>
+                        <!-- Row 13 -->
+                        <tr>
+                            <td id="td_157">&nbsp;</td>
+                            <td id="td_158">&nbsp;</td>
+                            <td id="td_159">&nbsp;</td>
+                            <td id="td_160">&nbsp;</td>
+                            <td id="td_161">&nbsp;</td>
+                            <td id="td_162">&nbsp;</td>
+                            <td class="td-ativo" id="td_163">&nbsp;</td>
+                            <td id="td_164">&nbsp;</td>
+                            <td class="td-ativo" id="td_165">&nbsp;</td>
+                            <td id="td_166">&nbsp;</td>
+                            <td class="td-ativo" id="td_167">&nbsp;</td>
+                            <td id="td_168">&nbsp;</td>
+                            <td id="td_169">&nbsp;</td>
+                        </tr>
+                        <!-- RoW 14 -->
+                        <tr>
+                            <td id="td_170">&nbsp;</td>
+                            <td id="td_171">&nbsp;</td>
+                            <td id="td_172">&nbsp;</td>
+                            <td class="td-ativo" id="td_173">6</td>
+                            <td id="td_174">&nbsp;</td>
+                            <td id="td_175">&nbsp;</td>
+                            <td class="td-ativo" id="td_176">&nbsp;</td>
+                            <td id="td_177">&nbsp;</td>
+                            <td class="td-ativo" id="td_178">&nbsp;</td>
+                            <td id="td_179">&nbsp;</td>
+                            <td class="td-ativo" id="td_180">&nbsp;</td>
+                            <td id="td_181">&nbsp;</td>
+                            <td id="td_182">&nbsp;</td>
+                        </tr>
+                        <!-- Row 15 -->
+                        <tr>
+                            <td id="td_183">&nbsp;</td>
+                            <td id="td_184">&nbsp;</td>
+                            <td id="td_185">&nbsp;</td>
+                            <td class="td-ativo" id="td_186">&nbsp;</td>
+                            <td id="td_187">&nbsp;</td>
+                            <td id="td_188">&nbsp;</td>
+                            <td class="td-ativo" id="td_189">&nbsp;</td>
+                            <td id="td_190">&nbsp;</td>
+                            <td class="td-ativo" id="td_191">&nbsp;</td>
+                            <td id="td_192">&nbsp;</td>
+                            <td class="td-ativo" id="td_193">&nbsp;</td>
+                            <td id="td_194">&nbsp;</td>
+                            <td id="td_195">&nbsp;</td>
+                        </tr>
+                        <!-- Row 16 -->
+                        <tr>
+                            <td id="td_196">&nbsp;</td>
+                            <td class="td-ativo" id="td_197">11</td>
+                            <td class="td-ativo" id="td_198">&nbsp;</td>
+                            <td class="td-ativo" id="td_199">5</td>
+                            <td class="td-ativo" id="td_200">&nbsp;</td>
+                            <td class="td-ativo" id="td_201">&nbsp;</td>
+                            <td class="td-ativo" id="td_202">&nbsp;</td>
+                            <td class="td-ativo" id="td_203">&nbsp;</td>
+                            <td class="td-ativo" id="td_204">&nbsp;</td>
+                            <td class="td-ativo" id="td_205">&nbsp;</td>
+                            <td class="td-ativo" id="td_206">&nbsp;</td>
+                            <td id="td_207">&nbsp;</td>
+                            <td id="td_208">&nbsp;</td>
+                        </tr>
+                        <!-- Row 17 -->
+                        <tr>
+                            <td id="td_209">&nbsp;</td>
+                            <td id="td_210">&nbsp;</td>
+                            <td id="td_211">&nbsp;</td>
+                            <td class="td-ativo" id="td_212">&nbsp;</td>
+                            <td id="td_213">&nbsp;</td>
+                            <td id="td_214">&nbsp;</td>
+                            <td id="td_215">&nbsp;</td>
+                            <td id="td_216">&nbsp;</td>
+                            <td class="td-ativo" id="td_217">&nbsp;</td>
+                            <td id="td_218">&nbsp;</td>
+                            <td class="td-ativo" id="td_219">&nbsp;</td>
+                            <td id="td_220">&nbsp;</td>
+                            <td id="td_221">&nbsp;</td>
+                        </tr>
+                        <!-- Row 18 -->
+                        <tr>
+                            <td id="td_222">&nbsp;</td>
+                            <td id="td_223">&nbsp;</td>
+                            <td id="td_224">&nbsp;</td>
+                            <td class="td-ativo" id="td_225">&nbsp;</td>
+                            <td id="td_226">&nbsp;</td>
+                            <td id="td_227">&nbsp;</td>
+                            <td id="td_228">&nbsp;</td>
+                            <td class="td-ativo" id="td_229">10</td>
+                            <td class="td-ativo" id="td_230">&nbsp;</td>
+                            <td id="td_231">&nbsp;</td>
+                            <td id="td_232">&nbsp;</td>
+                            <td id="td_233">&nbsp;</td>
+                            <td id="td_234">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="container-pergunta" id="container_pergunta">
+                <p class="escol-pergunta">Escolha uma pergunta:</p>
+
+                <button onclick="p1()" class="btn-pergunta" id="p_1">1</button>
+                <button onclick="p2()" class="btn-pergunta" id="p_2">2</button>
+                <button onclick="p3()" class="btn-pergunta" id="p_3">3</button>
+                <button onclick="p4()" class="btn-pergunta" id="p_4">4</button>
+                <button onclick="p5()" class="btn-pergunta" id="p_5">5</button>
+                <button onclick="p6()" class="btn-pergunta" id="p_6">6</button>
+                <button onclick="p7()" class="btn-pergunta" id="p_7">7</button>
+                <button onclick="p8()" class="btn-pergunta" id="p_8">8</button>
+                <button onclick="p9()" class="btn-pergunta" id="p_9">9</button>
+                <button onclick="p10()" class="btn-pergunta" id="p_10">10</button>
+                <button onclick="p11()" class="btn-pergunta" id="p_11">11</button>
+                <button onclick="p12()" class="btn-pergunta" id="p_12">12</button>
+                <button onclick="p13()" class="btn-pergunta" id="p_13">13</button>
+                <button onclick="p14()" class="btn-pergunta" id="p_14">14</button>
+                <button onclick="p15()" class="btn-pergunta" id="p_15">15</button>
+                <button onclick="p16()" class="btn-pergunta" id="p_16">16</button>
+                
+                <div id="op_pergunta" class="op-pergunta">
+                    <p id="pergunta" class="pergunta-"></p>
+                    <p id="dica" class="dica-"></p>
+                    <input id="input_pergunta">
+
+                    <button onclick="verificar_resposta()" class="btn-verificar">Verificar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-finalizado" id="container_finalizado">
+            <h1>Parabéns!!</h1> 
+            <p>Você finalizou o jogo</p>
+     
+            <button onclick="jogar_novamente()">Jogar novamente!</button>
+         </div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    var i;
+    var contador;
+    var cont;
+    var acertos = 0;
+
+    var cell;
+    var btn_cell;
+
+    var color;
+    var nome_usuario;
+    var resposta_usuario;
+
+    var enunciado = [
+        '1. Qual é a sigla para Central Process Unit?',
+        '2. Um circuto digital que realiza operações lógicas e aritméticas. Qual é o nome deste componente?',
+        '3. Tipo de memória que se encontra no topo da hierarquia de memória.',
+        '4. Tipo de memória volátil que tem como nome Random Acess Memory. Qual é a sigla deste componente?',
+        '5. Tipo de memória não volátil que oferece dados apenas para leitura.',
+        '6. Tipo de memória não volátil que precisa ter seu chip exposto a luz ultravioleta para apagar seu conteúdo.',
+        '7. Tipo particular de EEPROM que mantém as informações armazenadas sem a necessidade de uma fonte de energia elétrica.',
+        '8. Tipo de memória que precisa ter seu conteúdo copiado na RAM para poder ser executado pela CPU.',
+        '9. Permite que periféricos acessem diretamente a RAM sem ocupar processamento.',
+        '10. Também conhecido como Slave Select (SS). Usado para selecionar um ou um conjunto de circuitos que estão conectados no computador.',
+        '11. Grupo de linhas ou trilhas usadas para se referir a um endereço físico na memória. O número de trilhasdetermina a quantidade de endereços na memória física.',
+        '12. Também chamado de Memory Bus. É responsável para carregar os dados.',
+        '13. Modelo de processador desenvolvido pela Intel qu teve sua primeira versão lançada em setembro de 2009.',
+        '14. Modelo de processador desenvolvido pela Intel qu teve sua primeira versão lançada em novembro de 2008.',
+        '15. Tipo de processador que possui dois processadores ou melhor dizendo ‘dois centros, núcleos ou cores de execução‘ no mesmo circuito integrado.  Cada core tem sua própria memória cash e controlador o que permite que funcione mais efetivamente do que um processador single.',
+        '16. Segue o mesmo princípio de um dual-core, mas agora em teoria tem o dobro da capacidade de processamento.'
+    ];
+
+    var resposta = ['CPU','ULA','Registradores','RAM','ROM','EPROM','FLASH','Memória de Massa',
+    'DMA','CS','Adress Bus','Data Bus','I5','I7','Dual Core','Quad Core'];
+
+    var cell_inicial = [4,100,46,46,199,173,88,24,150,229,197,139,89,85,29,5];
+    var cell_final = [30,102,201,48,225,225,140,219,152,230,206,230,90,86,37,109];
+    
+    var dica_pal = ['3 letras','3 letras','13 letras','3 letras','3 letras','5 letras','5 letras',
+    '14 letras','3 letras','2 letras','9 letras','7 letras','1 letra e 1 número','1 letra e 1 número',
+    '8 letras','8 letras'];
+
+    function iniciar_jogo() {
+        container_iniciar.style.display='none';
+
+        // btn_perfil.style.display='flex';
+        reset_.style.display='flex';
+        container_pergunta.style.display='block';
+        container_central.style.display='flex';
+    }
+
+    // function criar_perfil() {
+    //     nome_usuario = input_apelido.value;
+    //     color = input_color.value;
+
+    //     if (nome_usuario == '' || color == '') {
+    //         alert(`Nome/ou cor inválidos!`);
+    //     } else {
+    //         container_criar_perfil.style.display='none';
+
+    //         options_.style.background=`${color}`;
+    //         btn_perfil.style.background=`${color}`;
+    //         reset_.style.background=`${color}`;
+    //         container_pergunta.style.background=`${color}`;
+            
+    //         btn_perfil.style.display='flex';
+    //         reset_.style.display='flex';
+    //         container_pergunta.style.display='block';
+    //         container_central.style.display='flex';
+    //     }
+    // }
+    
+    function p1() {i = 0; i+=0; return mostrar_questão();}
+    function p2() {i = 0; i+=1; return mostrar_questão();}
+    function p3() {i = 0; i+=2; return mostrar_questão();}
+    function p4() {i = 0; i+=3; return mostrar_questão();}
+    function p5() {i = 0; i+=4; return mostrar_questão();}
+    function p6() {i = 0; i+=5; return mostrar_questão();}
+    function p7() {i = 0; i+=6; return mostrar_questão();}
+    function p8() {i = 0; i+=7; return mostrar_questão();}
+    function p9() {i = 0; i+=8; return mostrar_questão();}
+    function p10() {i = 0; i+=9; return mostrar_questão();}
+    function p11() {i = 0; i+=10; return mostrar_questão();}
+    function p12() {i = 0; i+=11; return mostrar_questão();}
+    function p13() {i = 0; i+=12; return mostrar_questão();}
+    function p14() {i = 0; i+=13; return mostrar_questão();}
+    function p15() {i = 0; i+=14; return mostrar_questão();}
+    function p16() {i = 0; i+=15; return mostrar_questão();}
+    
+    function mostrar_questão() {
+        op_pergunta.style.display='block';
+
+        dica.innerHTML = `<span style="color: #66b5ff;">
+        Dica: </span>${dica_pal[i]}!`;
+        pergunta.innerHTML = `${enunciado[i]}`;
+    }
+
+    function verificar_resposta() {
+        resposta_usuario = input_pergunta.value;
+        
+        if (resposta_usuario.toUpperCase() == resposta[i].toUpperCase()) {
+            if (acertos < 15) {
+                alert(`Resposta correta!`);
+
+                acertos+=1;
+            
+                return verifica_letras();   
+            } else {
+                container_central.style.display='none';
+                container_table.style.display='none';
+                container_pergunta.style.display='none';
+                op_pergunta.style.display='none';
+                reset_.style.display='none';
+                container_finalizado.style.display='block';
+            }         
+        } else {
+            alert(`Resposta errada, tente novamente!`);
+        }  
+    }
+
+    function verifica_letras() {
+        contador = resposta[i].length;
+        while (contador > 0) {
+            return verifica_escolha();
+        }
+    }
+
+    function verifica_escolha() {
+        // question 1
+        if (i == 0) { return adcionando_palavras();}
+        // question 2
+        if (i == 1) {return adcionando_palavras();}
+        // question 3
+        if (i == 2) {return adcionando_palavras();}
+        // question 4
+        if (i == 3) {return adcionando_palavras();}
+        // question 5
+        if (i == 4) { return adcionando_palavras();} 
+        // question 6
+        if (i == 5) { return adcionando_palavras();}      
+        // question 7
+        if (i == 6) { return adcionando_palavras();}
+        // question 8
+        if (i == 7) {return adcionando_palavras();}      
+        // question 9
+        if (i == 8) { return adcionando_palavras();}       
+        // question 10
+        if (i == 9) {return adcionando_palavras();}  
+        // question 11
+        if (i == 10) { return adcionando_palavras();}  
+        // question 12
+        if (i == 11) {return adcionando_palavras();}  
+        // question 13
+        if (i == 12) {return adcionando_palavras();}  
+        // question 14
+        if (i == 13) {return adcionando_palavras();}   
+        // question 15
+        if (i == 14) {return adcionando_palavras();}  
+        // question 16
+        if (i == 15) {return adcionando_palavras();}  
+    }
+
+    function adcionando_palavras() {
+        cont = cell_inicial[i];
+        
+        cell = document.querySelector(`#td_${cont}`);
+        btn_cell = document.querySelector(`#p_${i+1}`);
+       
+        cell.style.background='#6fbd8e';
+        cell.innerHTML = `<span style="color: #f3f3f3;">
+        ${resposta_usuario.toUpperCase()[resposta_usuario.length-[contador]]} </span>`;
+
+        while (cont < cell_final[i]) {
+            if (i == 1 || i == 3 || i == 8 || i == 9 || i == 10 || i == 12 || i == 13 || i == 14) {
+                cont+=1;
+            } else {
+                cont+=13;
+            }
+
+            contador--;
+            cell = document.querySelector(`#td_${cont}`);
+            cell.style.background='#6fbd8e';
+            cell.innerHTML = `<span style="color: #f3f3f3;">
+            ${resposta_usuario.toUpperCase()[resposta_usuario.length-[contador]]} </span>`;
+            
+            btn_cell.style.display='none';
+            op_pergunta.style.display='none';
+            input_pergunta.value = '';
+        }   
+    }
+
+    function jogar_novamente() {
+        window.location.href='index.html';
+    }
+
+    function resetar_jogo() {
+        window.location.href='index.html';
+    }
+
+</script>

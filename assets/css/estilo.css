@@ -1,0 +1,383 @@
+
+/* Configurações Básicas
+ ___________________________________________________________________ */
+
+*{margin: 0; padding: 0; outline: none; font-family: 'century gothic', sans-serif;}
+
+body{background: #f3f3f3}
+
+/* Containers
+ ___________________________________________________________________ */
+
+.container-box{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+
+.container-iniciar{
+    background: #303030;
+    border: 5px solid #f3f3f3;
+    padding: 2%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #305375b2;
+    transition: .5s;
+    margin: auto;
+}
+
+.container-iniciar:hover{
+    transition: .5s;
+    box-shadow: 0 0 40px #305375;
+}
+
+.container-iniciar h1{
+    color: #f3f3f3;
+}
+
+.container-iniciar p{
+    color: #f3f3f3;
+    line-height: 25px;
+}
+
+.container-iniciar button{
+    width: 30%;
+    padding: 2% 0;
+    margin-top: 1%;
+    font-size: 1.15rem;
+    font-weight: 900;
+    border: none;
+    color: #303030;
+    cursor: pointer;
+    box-shadow: inset 0 0 10px #f3f3f3af;
+    background: #f3f3f3;
+    border-radius: 80px;
+    transition: .3s linear;
+}
+
+.container-iniciar button:hover{
+    transition: .3s linear;
+    background: #66b5ff;
+    color: #f3f3f3;
+    width: 35%;
+}
+
+.container-criar-perfil{
+    display: none;
+    background: #303030;
+    border: 5px solid #f3f3f3;
+    padding: 2%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #305375b2;
+    transition: .5s;
+    margin: auto;
+}
+
+.container-criar-perfil:hover{
+    transition: .5s;
+    box-shadow: 0 0 40px #305375;
+}
+
+.container-criar-perfil h1{
+    color: #f3f3f3;
+}
+
+.container-criar-perfil p{
+    color: #f3f3f3;
+    line-height: 40px;
+    padding-left: 2%;
+}
+
+.container-criar-perfil input[type='text']{
+    border: none;
+    width: 300px;
+    padding: 2% 0;
+    margin: 1% 1%;
+    transition: .3s;
+    color: #303030;
+    font-weight: 500;
+    font-size: 17px;
+    border-radius: 15px;
+}
+
+.container-criar-perfil input[type='color']{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 2%;
+}
+
+.container-criar-perfil input[type='text']:focus{
+    transition: .3s;
+    background: #AFD3F7;
+    box-shadow: inset 0 0 20px #f3f3f3;
+}
+
+.container-criar-perfil button{
+    width: 85%;
+    padding: 3% 0;
+    margin-top: 3%;
+    font-size: 1.15rem;
+    font-weight: 900;
+    border: none;
+    color: #303030;
+    cursor: pointer;
+    box-shadow: inset 0 0 10px #f3f3f3af;
+    background: #f3f3f3;
+    border-radius: 80px;
+    transition: .3s linear;
+}
+
+.container-criar-perfil button:hover{
+    transition: .3s linear;
+    background: #66b5ff;
+    color: #f3f3f3;
+    width: 90%;
+}
+
+.container-table h1{
+    text-align: center;
+    color: #fff;
+}
+
+.container-finalizado{
+    display: none;
+    padding: 2% 10% 2%;
+    height: auto;
+    background: #303030;
+    text-align: center;
+    margin: auto;
+    border: 5px solid #f3f3f3;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #305375b2;
+    transition: .4s linear;
+}
+
+.container-finalizado:hover{
+    transition: .4s linear;
+    box-shadow: 0 0 40px #305375;
+}
+
+.container-finalizado h1{
+    color: #f3f3f3;
+    font-size: 40px;
+}
+
+.container-finalizado p{
+    color: #f3f3f3;
+    font-size: 30px;
+}
+
+.container-finalizado button{
+    padding: 5% 10%;
+    margin-top: 1%;
+    font-size: 1.15rem;
+    font-weight: 900;
+    border: none;
+    color: #303030;
+    cursor: pointer;
+    background: #f3f3f3;
+    border-radius: 80px;
+    box-shadow: inset 0 0 10px #f3f3f3af;
+    transition: .3s linear;
+    margin-top: 2%;
+}
+
+.container-finalizado button:hover{
+    transition: .3s linear;
+    background: #66b5ff;
+    color: #f3f3f3;
+    padding: 5% 20%;
+}
+
+.container-central{
+    width: 200vh;
+    margin: auto;
+    display: none;
+    justify-content: center;
+}
+
+/* Cruzadinha
+ ___________________________________________________________________ */
+
+table.base-table{
+    width: auto;
+    height: auto;
+    background: #303030;
+    transition: .5s;
+    border-right: 3px solid #AFD3F7;
+}
+
+table{
+    border-collapse: collapse;
+    box-shadow: 0 0 20px #305375b2;
+} 
+
+table tbody tr td{
+    background: #fff;
+    width: 25px;
+    font-weight: 900;
+    font-size: 19px;
+    padding: 2px;
+    text-align: center;
+    color: #fff;
+    border: solid 2px #f3f3f3;
+}
+
+td.td-ativo{
+    background: #7ab5ec;
+    box-shadow: inset 0 0 5px #4a7aa7;
+}
+
+/* Configurações da Cruzadinha
+ ___________________________________________________________________ */
+
+.op-pergunta{display: none;}
+
+.dica-{
+    color: #f3f3f3;
+    margin-bottom: -1%;
+    text-transform: uppercase;
+}
+
+.container-pergunta{
+    display: none;
+    width: 40%;
+    background: #303030;
+    text-align: center;
+    color: #f3f3f3;
+    font-weight: 100;
+    padding: 1%;
+    font-size: 20px;
+    border-left: 3px solid #AFD3F7;
+    box-shadow: 20px 0 20px #3053755d;
+}
+
+.container-pergunta input{
+    border: none;
+    width: 92%;
+    padding: 2% 2%;
+    margin: 1% 0;
+    transition: .3s;
+    color: #303030;
+    font-weight: 500;
+    font-size: 17px;
+    border-radius: 15px;
+}
+
+.container-pergunta input:focus{
+    transition: .3s;
+    background: #AFD3F7;
+    box-shadow: inset 0 0 20px #f3f3f3;
+}
+
+.container-pergunta button{
+    width: 55px;
+    height: 55px;
+    padding: 1% 0;
+    margin-top: 1%;
+    font-size: 18px;
+    font-weight: 100;
+    border: 1px solid #4a7aa7;
+    color: #303030;
+    cursor: pointer;
+    background: #f3f3f3;
+    transition: .3s linear;
+    border-radius: 10px;
+}
+
+.container-pergunta button:hover{
+    transition: .3s linear;
+    background: #5ca2e4;
+    color: #f3f3f3;
+}
+
+.container-pergunta p{margin: 2% 2%; text-align: justify;}
+.escol-pergunta{ font-size: 20px;}
+
+button.btn-verificar{
+    width: 96%;
+    padding: 2% 0;
+    background: #5ca2e4;
+    border: 1px solid #5ca2e4;
+    color: #f3f3f3;
+    font-weight: 500;
+    transition: .3s linear;
+}
+
+button.btn-verificar:hover{
+    transition: .3s linear;
+    background: #75c575;
+    border: 1px solid #75c575;
+}
+
+.options{
+    position: fixed;
+    width: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #303030;
+}
+
+.reset-{
+    display: none;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    background: #303030;
+    color: #f3f3f3;
+    font-weight: 900;
+    font-size: 40px;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+.reset-:hover{
+    background: #5ca2e4;
+}
+
+.reset-:hover > img{
+    animation: refresh 1s ease-in-out;
+}
+
+.reset- img{height: 40px;}
+
+@keyframes refresh {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.btn-perfil{
+    display: none;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    background: #303030;
+    font-weight: 900;
+    font-size: 40px;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+.btn-perfil:hover{
+    background: #5ca2e4;
+}
+
+.btn-perfil:hover > img{width: 30px;}
+
+.btn-perfil img{
+    width: 40px;
+    transition: .5s ease-in-out;
+}
